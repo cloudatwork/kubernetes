@@ -4,10 +4,10 @@ sudo apt-upgrade -y
 sudo apt-get remove needrestart -y
 
 # Add entries in hosts file
-sudo nano /etc/hosts
-192.168.1.4 master
-192.168.1.5 node1
-192.168.1.6 node2
+sudo sed -i '2iexport 192.168.0.4 master' /etc/hosts
+sudo sed -i '3iexport 192.168.0.5 node1' /etc/hosts
+sudo sed -i '4iexport 192.168.0.6 node1' /etc/hosts
+
 
 # Turn off swap (Most cloud VMs don't have swap turned on by default, but still)
 sudo swapoff -a
